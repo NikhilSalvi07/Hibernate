@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+  <hibernate-mapping>  
+  <class name="com.mapping.collection.map.Book" table="book_map"> <!-- table 1 book_list -->
+    <id name="bk_id" column="id" type="int" length="1" >  
+    <generator class="increment"/> <!-- increment use for id auto generate -->>
+    
+    
+     
+    </id>  
+     
+   <!-- Same Property name give in POJO class Ex. bk_name or column name will be same/different-->       
+    <property name="bk_name" column="bk_name" type="string" length="20"/>
+    <property name="publisher" column="publisher" type="string" length="10"/>
+    
+    <map name="author" table="author_map"><!-- table 2 author_list -->
+    <key column="id"/>
+    <map-key column="author" type="string" length="20"/>
+    <element column="count" type="int" length="1"/>
+      
+  
+   
+       </map>
+        </class>  
+            
+ </hibernate-mapping>

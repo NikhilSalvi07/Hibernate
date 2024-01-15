@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+  <hibernate-mapping>  
+  <class name="com.mapping.inheritance.vertical.Disc" table="disc_vm">  
+    <id name="Id" column="id" type="int" length="1" >  
+    <generator class="increment"/> <!-- increment use for id auto generate -->>
+    
+    
+     
+    </id>  
+     
+	 
+    
+    <property name="Name" column="name" type="string" length="20"/>
+    <property name="Price" column="price" type="int" length="1"/>
+    
+    <joined-subclass name="com.mapping.inheritance.vertical.AudioDisc" table="disc_vm_audio" >
+    <key column="Id"/>
+    	<property name="SingerName" column="SingerName" type="string" length="20"/>
+        <property name="NoOfSongs" column="NoOfSongs" type="int" length="1"/>
+    
+    </joined-subclass>
+    
+    <joined-subclass name="com.mapping.inheritance.vertical.VideoDisc" table="disc_vm_video" >
+        <key column="Id"/>
+	    <property name="Director" column="Director" type="string" length="20"/>
+	    <property name="VideoFormat" column="VideoFormat" type="string" length="10"/>
+	    
+    </joined-subclass>
+    
+    
+      <!-- <property name="mks_cc" column="mks_cc" type="float" length="10"/>   
+       -->
+        </class>  
+            
+ </hibernate-mapping>

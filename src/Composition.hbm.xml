@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+  <hibernate-mapping>  
+    <class name="com.mapping.composition.Person" table="Composition">  
+    <id name="id" column="id" type="int" length="1" >  
+    <generator class="increment"/> <!-- increment use for id auto generate -->>
+    
+    </id>  
+    
+    <property name="name" column="name" type="string" length="20"/>
+     
+   <!-- Same Property name give in POJO class Ex. bk_name or column name will be same/different-->       
+	
+	<component name="bDate" class="com.mapping.composition.Date">
+		<property name="date" column="date" type="int" length="1"/>
+    	<property name="year" column="year" type="int" length="1"/>
+    	<property name="month" column="month" type="string" length="20"/>
+	</component>
+  
+  
+  </class>  
+
+            
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+  <hibernate-mapping>  
+  <class name="com.hql.Disk" table="disk">  
+    <id name="dskId" column="id" type="int" length="1" >  
+    <generator class="increment"/> <!-- increment use for id auto generate -->>
+    
+    
+     
+    </id>  
+     
+               
+    <property name="dskName" column="name" type="string" length="20"/>
+    <property name="dskType" column="type" type="string" length="10"/>
+    <property name="dskPrice" column="price" type="int" length="1"/>
+      <!-- <property name="mks_cc" column="mks_cc" type="float" length="10"/>   
+       -->
+        </class>  
+            
+ </hibernate-mapping>

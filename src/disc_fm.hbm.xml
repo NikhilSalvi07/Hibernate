@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+  <hibernate-mapping>  
+  <class name="com.mapping.inherance.Disc" table="disc_fm">  
+    <id name="Id" column="id" type="int" length="1" >  
+    <generator class="increment"/> <!-- increment use for id auto generate -->>
+    
+    
+     
+    </id>  
+     
+	<discriminator column="Type" type="string" length="40"/>     
+    
+    <property name="Name" column="name" type="string" length="20"/>
+    <property name="Price" column="price" type="int" length="1"/>
+    
+    <subclass name="com.mapping.inherance.AudioDisc" discriminator-value="audio" >
+    	<property name="SingerName" column="SingerName" type="string" length="20"/>
+        <property name="NoOfSongs" column="NoOfSongs" type="int" length="1"/>
+    
+    </subclass>
+    
+    <subclass name="com.mapping.inherance.VideoDisc" discriminator-value="video" >
+	    <property name="Director" column="Director" type="string" length="20"/>
+	    <property name="VideoFormat" column="VideoFormat" type="string" length="10"/>
+	    
+    </subclass>
+    
+    
+    
+      <!-- <property name="mks_cc" column="mks_cc" type="float" length="10"/>   
+       -->
+        </class>  
+            
+ </hibernate-mapping>
